@@ -27,7 +27,66 @@ import java.util.Scanner;
 *   Source: GeeksforGeeks. (2021, January 18). Scope of Variables In Java. https://www.geeksforgeeks.org/variable-scope-in-java/
 *   		 Scope in Java. (2021). Codecademy. https://www.codecademy.com/articles/variable-scope-in-java
 */
+//Make a class in a separate file with private fields
+class Dog { // Source: https://www.baeldung.com/java-reflection-read-private-field-value
+	private String name; // = "Habeeb";
+	private int age; //= 9;
+	private char gender; //= 'F';
+	private float weightLbs; //= 40.32f;
+	private short beauty; //= 10;
+	
+	//public getters and setters | Source: https://www.freecodecamp.org/news/java-getters-and-setters/
+	//getters
+	public String getName() {
+		return name;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	public char getGender() {
+		return gender;
+	}
+	public float getWeightLbs() {
+		return weightLbs;
+	}
+	public short getBeauty() {
+		return beauty;
+	}
+	
+	//setters
+	public void setName() {
+		this.name = "Habeeb";
+	}
+	public void setAge() {
+		this.age = 9;
+	}
+	public void setGender() {
+		this.gender = 'F';
+	}
+	public void setWeightLbs() {
+		this.weightLbs = 40.32f;
+	}
+	public void setBeauty() {
+		this.beauty = 10;
+	}
+	
 
+	//a constructor with and without parameters | Source: https://www.geeksforgeeks.org/constructors-in-java/
+	//without parameters -> the default constructor = no-argument constructor
+	//int num;
+	//String namez;
+	Dog() {
+		System.out.println("A little about myself...I love dogs.");
+	}
+
+
+	//with parameters -> parameterized constructor
+	Dog(String namez, String breed, int numDgz) {
+		System.out.println(namez + ", my " + breed + " is one of my " + numDgz + " rescue dogs");
+	}
+	
+}
 
 
 
@@ -41,7 +100,15 @@ public class DogCalculations3 {
 	}
 
 		public static void main(String[] args) {
-		
+			//without parameters
+			Dog dog1 = new Dog(); //"Constructor called"
+				//System.out.println(dog1.num); //"0"
+				//System.out.println(dog1.namez); //"null"
+			//with parameters
+			Dog dog2 = new Dog("Pinky", "chihuaha mix", 3);
+			Dog dog3 = new Dog("Muffin", "dachshund mix", 3);
+			Dog dog4 = new Dog("Habeeb", "border collie/sheltie mix", 3);
+			System.out.println("\n");
 			
 			Scanner input = new Scanner(System.in); //"input" is the Scanner object we've created | this allows for user input
 			boolean boolYard = true;
@@ -59,7 +126,7 @@ public class DogCalculations3 {
 			 * In Java, "casting" is used to change the size in memory that you want to use. Start with a double, it's to cut it off to change space.
 			 * Source: Rachel Matthews. (2021, May 26).
 			 */
-			System.out.println("\tHello! Congratulations on your new bordercollie/sheltie mix puppy/dog!");
+			System.out.println("\tHello! Congratulations on your new border collie/sheltie mix puppy/dog!");
 			System.out.println("We just need some information from you to make sure you're new family member will be happy in his/her forever home <3");
 			System.out.println("\nIs it " + boolYard + " that you have a yard for your new puppy/dog to get adequate amount of exercise in? \n AND/OR that you have the means to bring your dog to a dog park, or other area of grass for your new puppy/dog to get the adequate amount of exercise in?");
 			System.out.println("Enter: Yes or No");
